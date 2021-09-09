@@ -54,8 +54,8 @@ const performance = (fn, str, iteration) => {
         data.push(end - start)
     }
     const ns = data.reduce((a, v) => (a + v), BigInt(0)) / BigInt(data.length)
-    return console.log(`Passage is ${longPalindrome.length} chars.\nTimelapsed for running ${fn.name} ${iteration} times. \nAn average time of ${ns} nanoseconds`)
+    console.log(`\nPassage is ${longPalindrome.length} chars.\nTimelapsed for running ${fn.name} ${iteration} times. \nAn average time of ${ns} nanoseconds`)
+    return ns
 }
 
-performance(palindromeLoop, longPalindrome, 20)
-performance(palindrome, longPalindrome, 20)
+console.log(`\nPalindrome is better than PalindromeLoop by ${performance(palindromeLoop, longPalindrome, 20) - performance(palindrome, longPalindrome, 20)} nanoseconds`)
