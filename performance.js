@@ -13,4 +13,5 @@ const performance = (fn, str, iteration) => {
     return ns
 }
 
-console.log(`\nPalindrome is better than PalindromeLoop by ${performance(palindromeLoop, longPalindrome, 20) - performance(palindrome, longPalindrome, 20)} nanoseconds`)
+const iteration = 5
+console.log(`\nPalindrome is better than PalindromeLoop by ${performance(palindromeLoop, longPalindrome, iteration) - performance(palindrome, longPalindrome, iteration)} nanoseconds`)
