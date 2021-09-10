@@ -54,7 +54,7 @@ const performance = (fn, str, iteration) => {
         data.push(end - start)
     }
     const ns = data.reduce((a, v) => (a + v), BigInt(0)) / BigInt(data.length)
-    console.log(`\nPassage is ${longPalindrome.length} chars.\nTimelapsed for running ${fn.name} ${iteration} times. \nAn average time of ${ns} nanoseconds`)
+    console.log(`\nPassage is ${longPalindrome.length} chars. \nAverage runtime of ${fn.name} after ${iteration} times is: ${ns} nanoseconds. \nIs the passage a palindrome? ${fn(longPalindrome)}`)
     return ns
 }
 
